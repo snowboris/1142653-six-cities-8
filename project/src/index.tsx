@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
-import Hotel from './types/data';
+import {Hotels} from './types/data';
 
-const data: Hotel[] = [
+const data: Hotels = [
   {
     'bedrooms': 3,
     'city': {

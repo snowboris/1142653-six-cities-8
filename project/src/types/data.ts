@@ -1,10 +1,10 @@
-type HotelLocation = {
+export type HotelLocation = {
   latitude: number,
   longitude: number,
   zoom: number
-};
+}
 
-type Hotel = {
+export type Hotel = {
   bedrooms: number,
   city: {
     location: HotelLocation,
@@ -29,6 +29,6 @@ type Hotel = {
   rating: number,
   title: string,
   type: string
-};
+}
 
-export default Hotel;
+export type Hotels = Hotel[];

@@ -1,8 +1,8 @@
 import MainPage from '../main/main';
-import Hotel from '../../types/data';
+import {Hotels} from '../../types/data';
 
 type Props = {
-  data: Hotel[]
+  data: Hotels
 }
 
 function App({ data }: Props): JSX.Element {
