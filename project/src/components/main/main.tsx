@@ -1,44 +1,12 @@
 import React from 'react';
 import PlaceCard from '../place-card/place-card';
+import Hotel from '../../types/data';
 
-type Location = {
-  latitude: number,
-  longitude: number,
-  zoom: number
-}
-
-type Hotel = {
-  bedrooms: number,
-  city: {
-    location: Location,
-    name: string
-  }
-  description: string,
-  goods: string[],
-  host: {
-    avatarUrl: string,
-    id: number,
-    isPro: boolean,
-    name: string
-  }
-  id: number,
-  images: string[],
-  isFavorite: boolean,
-  isPremium: boolean,
-  location: Location,
-  maxAdults: number,
-  previewImage: string,
-  price: number,
-  rating: number,
-  title: string,
-  type: string
-}
-
-type MainPageProps = {
+type Props = {
   data: Hotel[]
 }
 
-function MainPage({ data }: MainPageProps): JSX.Element {
+function MainPage({ data }: Props): JSX.Element {
   return (
     <React.Fragment>
       <div style={{ display: 'none' }}>
