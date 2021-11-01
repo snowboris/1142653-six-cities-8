@@ -1,6 +1,7 @@
 import React from 'react';
-import PlaceCard from '../place-card/place-card';
-import {Hotel, Hotels} from '../../types/data';
+import OffersList from '../offers-list/offers-list';
+import {Hotels} from '../../types/data';
+import {Link} from 'react-router-dom';
 
 type Props = {
   data: Hotels
@@ -25,11 +26,11 @@ function MainPage({ data }: Props): JSX.Element {
               <nav className="header__nav">
                 <ul className="header__nav-list">
                   <li className="header__nav-item user">
-                    <a className="header__nav-link header__nav-link--profile" href="#">
+                    <Link to='/favorites' className='header__nav-link header__nav-link--profile'>
                       <div className="header__avatar-wrapper user__avatar-wrapper">
                       </div>
                       <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="header__nav-item">
                     <a className="header__nav-link" href="#">
@@ -100,11 +101,7 @@ function MainPage({ data }: Props): JSX.Element {
                     <li className="places__option" tabIndex={0}>Top rated first</li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  {data.map((item: Hotel) =>
-                    <PlaceCard key={item.id} placeCard={item} />,
-                  )}
-                </div>
+                <OffersList offers={data} />
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>
