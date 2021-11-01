@@ -1,13 +1,20 @@
+import {MouseEvent} from 'react';
 import {Hotel} from '../../types/data';
+import {Link} from 'react-router-dom';
 
 type Props = {
-  placeCard: Hotel
+  placeCard: Hotel,
+  handleMouseOver: (event: MouseEvent<HTMLElement>) => void
 }
 
-function PlaceCard({ placeCard }: Props): JSX.Element {
+function PlaceCard({ placeCard, handleMouseOver }: Props): JSX.Element {
+
 
   return (
-    <article className="cities__place-card place-card">
+    <article className="cities__place-card place-card"
+      data-offer-id={placeCard.id}
+      onMouseOver={(e) => handleMouseOver(e)}
+    >
       {placeCard.isPremium ?
         <div className="place-card__mark">
           <span>Premium</span>
@@ -38,7 +45,7 @@ function PlaceCard({ placeCard }: Props): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{placeCard.title}</a>
+          <Link to={`/offer/${placeCard.id}`}>{placeCard.title}</Link>
         </h2>
         <p className="place-card__type">{placeCard.type}</p>
       </div>

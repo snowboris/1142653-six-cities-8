@@ -25,7 +25,7 @@ function App({ data }: Props): JSX.Element {
           exact
           path='/favorites'
           render={() => <Favorites />}
-          authorization={false}
+          authorization
         />
         <Route path='/offer/:id' exact>
           <Property />
