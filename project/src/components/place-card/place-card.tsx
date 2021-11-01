@@ -1,4 +1,4 @@
-import Hotel from '../../types/data';
+import {Hotel} from '../../types/data';
 
 type Props = {
   placeCard: Hotel

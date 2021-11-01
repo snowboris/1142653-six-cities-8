@@ -1,9 +1,9 @@
 import React from 'react';
 import PlaceCard from '../place-card/place-card';
-import Hotel from '../../types/data';
+import {Hotel, Hotels} from '../../types/data';
 
 type Props = {
-  data: Hotel[]
+  data: Hotels
 }
 
 function MainPage({ data }: Props): JSX.Element {
