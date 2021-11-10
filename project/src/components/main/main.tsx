@@ -2,6 +2,7 @@ import React from 'react';
 import OffersList from '../offers-list/offers-list';
 import {Hotels} from '../../types/data';
 import {Link} from 'react-router-dom';
+import Map from '../map/map';
 
 type Props = {
   data: Hotels
@@ -104,7 +105,7 @@ function MainPage({ data }: Props): JSX.Element {
                 <OffersList offers={data} />
               </section>
               <div className="cities__right-section">
-                <section className="cities__map map"></section>
+                <Map selectedCity={'Amsterdam'} />
               </div>
             </div>
           </div>
